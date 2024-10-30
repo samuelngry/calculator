@@ -1,0 +1,53 @@
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+button {
+    width: 100px;
+    height: 70px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 25px;
+}
+
+.container {
+    background-color: white;
+    width: auto;
+    height: 600px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.display {
+    height: 90px;
+    border-radius: 20px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    background-color: lightblue;
+    text-align: right;
+}
+
+.first {
+    background-color: azure;
+}
+
+.operate {
+    background-color: orange;
+}
+
+.second {
+    background-color: grey;
+}
+
+
+
+
+

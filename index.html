@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+        <input type="text" class="display" value="0" readonly>
+        <div class="rowOne">
+        <button class="first">AC</button>
+        <button class="first">+/-</button>
+        <button class="first">%</button>
+        <button class="operate">÷</button>
+    </div>
+    <div class="rowTwo">
+        <button class="second">7</button>
+        <button class="second">8</button>
+        <button class="second">9</button>
+        <button class="operate">x</button>
+    </div>
+    <div class="rowThree">
+        <button class="second">4</button>
+        <button class="second">5</button>
+        <button class="second">6</button>
+        <button class="operate">-</button>
+    </div>
+    <div class="rowFour">
+        <button class="second">1</button>
+        <button class="second">2</button>
+        <button class="second">3</button>
+        <button class="operate">+</button>
+    </div>
+    <div class="rowFive">
+        <button class="second" id="zero">0</button>
+        <button class="second">.</button>
+        <button class="operate">=</button>
+    </div>
+</div>
     
+    <script src="script.js"></script>
 </body>
 </html>
