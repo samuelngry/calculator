@@ -1,6 +1,28 @@
 let firstNum = 0;
 let operator = 0;
 let secondNum = 0;
+let currentValue = 0;
+const display = document.querySelector(".display");
+const number = document.querySelectorAll(".number");
+const clearValue = document.querySelector("#clearValue");
+
+function populateDisplay() {
+    number.forEach(button => {
+        button.addEventListener("click", ()=> {
+            display.value += button.innerText;
+            currentValue = display.value;
+        });
+    });
+}
+
+function clearDisplay() {
+    clearValue.addEventListener("click", ()=> {
+        display.value = "";
+        currentValue = display.value;
+    });
+}
+
+clearDisplay();
 
 function operate(firstNum, operator, secondNum) {
     if (operator == "+") {
@@ -30,3 +52,4 @@ function divide(a, b) {
     return a/b;
 }
 
+populateDisplay();
