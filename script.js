@@ -33,9 +33,8 @@ operatorButton.forEach(button => {
         display.value = "";
         } else {
             secondValue = parseFloat(display.value);
-            
             operate(firstValue,secondValue,operation);
-            firstValue = display.value;
+            firstValue = parseFloat(display.value);
         }
      });
 });
