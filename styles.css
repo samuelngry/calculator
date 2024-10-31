@@ -35,6 +35,12 @@ button {
     text-align: right;
 }
 
+.header {
+    font-size: 25px;
+    width: 70%;
+    text-align: right;
+}
+
 .equals {
     background-color: orange;
 }

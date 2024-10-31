@@ -2,12 +2,14 @@ let operator = 0;
 let currentValue = 0;
 let firstValue = 0;
 let operatorClicked = false;
+let secondOperatorClicked = false;
 let operation = "";
 const display = document.querySelector(".display");
 const number = document.querySelectorAll(".number");
 const clearValue = document.querySelector("#clearValue");
 const operatorButton = document.querySelectorAll(".operate");
 const equalButton = document.querySelector(".equals");
+const header = document.querySelector(".header");
 
 
 function populateDisplay() {
@@ -16,9 +18,12 @@ function populateDisplay() {
             if (!operatorClicked) { // First value
                 display.value += button.innerText;
                 firstValue = display.value;
-            } else { // Second value
+            } else if (operatorClicked && !secondOperatorClicked){ // Second value
                 display.value += button.innerText;
                 secondValue = display.value;
+            } else if (operatorClicked && secondOperatorClicked) {
+                display.value = button.innerText;
+                secondOperatorClicked = false;
             }
         });
     });
@@ -31,11 +36,15 @@ operatorButton.forEach(button => {
         operation = button.innerText;
         firstValue = parseFloat(display.value);
         display.value = "";
+        header.innerText = `${firstValue} ${operation}`;
         } else {
             secondValue = parseFloat(display.value);
             operate(firstValue,secondValue,operation);
+            // start
             firstValue = parseFloat(display.value);
-        }
+            secondOperatorClicked = true;
+            operation = button.innerText;
+        } 
      });
 });
 
@@ -44,6 +53,7 @@ function equalsTo() {
         secondValue = parseFloat(display.value);
         operate(firstValue, secondValue, operation);
         operatorClicked = false;
+        secondOperatorClicked = false;
     })
 }
 
@@ -51,6 +61,7 @@ function clearDisplay() {
     clearValue.addEventListener("click", ()=> {
         display.value = "";
         operation = "";
+        header.innerText = "";
         firstValue = 0;
         secondValue = 0;
         operatorClicked = false;
