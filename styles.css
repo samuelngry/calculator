@@ -35,6 +35,10 @@ button {
     text-align: right;
 }
 
+.equals {
+    background-color: orange;
+}
+
 .first {
     background-color: azure;
 }
