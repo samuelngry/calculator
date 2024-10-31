@@ -26,10 +26,17 @@ function populateDisplay() {
 
 operatorButton.forEach(button => {
     button.addEventListener("click", ()=> {
+        if (!operatorClicked) {
         operatorClicked = true;
         operation = button.innerText;
         firstValue = parseFloat(display.value);
         display.value = "";
+        } else {
+            secondValue = parseFloat(display.value);
+            
+            operate(firstValue,secondValue,operation);
+            firstValue = display.value;
+        }
      });
 });
 
@@ -44,13 +51,11 @@ function equalsTo() {
 function clearDisplay() {
     clearValue.addEventListener("click", ()=> {
         display.value = "";
-        currentValue = display.value;
+        operation = "";
+        firstValue = 0;
+        secondValue = 0;
+        operatorClicked = false;
     });
-}
-
-// if second operator not "=", calculate and display value
-function noEqualOperate() {
-
 }
 
 function operate(firstNum, secondNum, operator) {
@@ -81,7 +86,7 @@ function divide(a, b) {
     if (b == 0) {
         display.value = "Cannot be divided by 0";
     } else {
-    display.value = a / b;
+        display.value = a / b;
     }
 }
 
