@@ -47,7 +47,13 @@ button {
     background-color: orange;
 }
 
+.rowFive {
+    display: flex;
+    width: 100%;
+}
 
-
+#zero {
+    flex-grow: 2;
+}
 
 

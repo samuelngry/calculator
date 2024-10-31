@@ -48,6 +48,11 @@ function clearDisplay() {
     });
 }
 
+// if second operator not "=", calculate and display value
+function noEqualOperate() {
+
+}
+
 function operate(firstNum, secondNum, operator) {
     if (operator == "+") {
         add(firstNum, secondNum);
@@ -73,7 +78,11 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+    if (b == 0) {
+        display.value = "Cannot be divided by 0";
+    } else {
     display.value = a / b;
+    }
 }
 
 populateDisplay();
