@@ -37,7 +37,8 @@ button {
 
 .header {
     font-size: 25px;
-    width: 70%;
+    width: 80%;
+    padding-bottom: 10px;
     text-align: right;
 }
 

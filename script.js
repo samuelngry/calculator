@@ -44,6 +44,7 @@ operatorButton.forEach(button => {
             firstValue = parseFloat(display.value);
             secondOperatorClicked = true;
             operation = button.innerText;
+            header.innerText = `${firstValue} ${operation}`;
         } 
      });
 });
@@ -51,6 +52,7 @@ operatorButton.forEach(button => {
 function equalsTo() {
     equalButton.addEventListener("click", ()=> {
         secondValue = parseFloat(display.value);
+        header.innerText = `${firstValue} ${operation} ${secondValue} = `
         operate(firstValue, secondValue, operation);
         operatorClicked = false;
         secondOperatorClicked = false;
