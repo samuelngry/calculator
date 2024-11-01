@@ -11,6 +11,7 @@ const operatorButton = document.querySelectorAll(".operate");
 const equalButton = document.querySelector(".equals");
 const header = document.querySelector(".header");
 const dot = document.querySelector(".dot");
+const plusminus = document.querySelector(".plusminus");
 
 function populateDisplay() {
     number.forEach(button => {
@@ -28,6 +29,10 @@ function populateDisplay() {
         });
     });
 }
+
+plusminus.addEventListener("click", ()=> {
+    display.value *= -1;
+})
 
 dot.addEventListener("click", ()=> {
     if (!display.value.includes(".")) {
