@@ -10,7 +10,7 @@ const clearValue = document.querySelector("#clearValue");
 const operatorButton = document.querySelectorAll(".operate");
 const equalButton = document.querySelector(".equals");
 const header = document.querySelector(".header");
-
+const dot = document.querySelector(".dot");
 
 function populateDisplay() {
     number.forEach(button => {
@@ -29,6 +29,12 @@ function populateDisplay() {
     });
 }
 
+dot.addEventListener("click", ()=> {
+    if (!display.value.includes(".")) {
+        display.value += ".";
+    }
+})
+
 operatorButton.forEach(button => {
     button.addEventListener("click", ()=> {
         if (!operatorClicked) {
@@ -40,7 +46,6 @@ operatorButton.forEach(button => {
         } else {
             secondValue = parseFloat(display.value);
             operate(firstValue,secondValue,operation);
-            // start
             firstValue = parseFloat(display.value);
             secondOperatorClicked = true;
             operation = button.innerText;
