@@ -59,7 +59,12 @@ button {
     width: 100%;
 }
 
+
 .plusminus {
+    background-color: azure;
+}
+
+.backspace {
     background-color: azure;
 }
 
